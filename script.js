@@ -47,7 +47,7 @@ function drawScene() {
     // 清空上一页图表
     d3.select("#chart").html("");
 
-    // 更新页面文字
+    // 更新页面
     d3.select("#scene-title")
         .text(scenes[currentScene].title);
 
@@ -149,14 +149,14 @@ function drawScatterplot() {
                 .style("display", "none");
         });
 
-    // X轴名称
+    // X轴
     svg.append("text")
         .attr("x", width / 2)
         .attr("y", height - 20)
         .attr("text-anchor", "middle")
         .text("Engine Cylinders");
 
-    // Y轴名称
+    // Y轴
     svg.append("text")
         .attr("transform", "rotate(-90)")
         .attr("x", -height / 2)
@@ -164,13 +164,13 @@ function drawScatterplot() {
         .attr("text-anchor", "middle")
         .text("Average Highway MPG");
 
-    // 固定显示的 annotation
+    // annotation
     svg.append("text")
         .attr("class", "annotation")
         .attr("x", margin.left + 20)
         .attr("y", 35)
         .text(scenes[currentScene].annotation);
-    // Scene 1 才显示 legend
+    // Scene 1 legend
     if (currentScene === 0) {
 
         const legend = svg.append("g")
@@ -204,7 +204,7 @@ function drawScatterplot() {
             .text("Gasoline Vehicle");
     }
 
-        // Scene 2
+        // Scene 2 legend
     if (currentScene === 1) {
 
         const legend = svg.append("g")
